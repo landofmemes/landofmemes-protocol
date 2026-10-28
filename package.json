@@ -1,0 +1,14 @@
+{
+  "name": "land-of-memes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Land of Memes landing site",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "assets": "python -I tools/assets.py",
+    "build": "node tools/build.mjs",
+    "gates": "node tools/gates.mjs",
+    "serve": "node tools/serve.mjs"
+  }
+}

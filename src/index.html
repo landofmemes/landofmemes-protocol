@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Land of Memes</title>
+<script>document.documentElement.className+=" js"</script>
+<meta name="description" content="Land of Memes. A Solana meme world with a live market board.">
+<meta name="theme-color" content="{{THEME}}">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<div class="topstack">
+  <header class="bar">
+    <a class="brand" href="#top" aria-label="Land of Memes, top of page">
+      <img class="brand-logo" src="assets/logo-192.png" width="40" height="40" alt="">
+      <span class="brand-name">Land of Memes</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#world">World</a>
+      <a href="#market">Market</a>
+      <a href="#board">Board</a>
+      <a href="#join">Join</a>
+    </nav>
+    <div class="bar-end">
+      <span class="pill" id="statusPill" data-state="loading" role="status"><i class="dot"></i><span id="statusText">Connecting</span></span>
+      <div class="socials" aria-label="Social links">
+{{SOCIAL_X}}
+{{SOCIAL_GITHUB}}
+      </div>
+    </div>
+  </header>
+  <div class="ca-row">
+{{CA_SLOT}}
+  </div>
+</div>
+
+<div class="ticker" aria-label="Ticker" id="tickerWrap">
+  <div class="ticker-track" id="ticker" aria-hidden="true">
+    <span class="tick tick-sk"></span><span class="tick tick-sk"></span><span class="tick tick-sk"></span><span class="tick tick-sk"></span><span class="tick tick-sk"></span><span class="tick tick-sk"></span>
+  </div>
+</div>
+
+<main id="top">
+  <section class="hero" id="hero">
+    <div class="mesh" aria-hidden="true">
+      <i class="blob b1" data-depth="0.35"></i>
+      <i class="blob b2" data-depth="0.6"></i>
+      <i class="blob b3" data-depth="0.9"></i>
+      <i class="grid-dots" data-depth="0.2"></i>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow" data-reveal>LOM / MEME LAND / SOLANA</p>
+      <h1 class="hero-title" data-reveal>Plant a flag<br>in the funniest<br><span class="soft">corner of the web.</span></h1>
+      <p class="lede" data-reveal>Every viral face, frog and feline gets a patch of ground here. Wander the map, watch what is moving on Solana right now, and claim your spot before the crowd arrives.</p>
+      <div class="cta-row" data-reveal>
+        <a class="btn btn-paper" href="#market">Watch the market <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8h9M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-line" href="#world">Tour the land</a>
+      </div>
+    </div>
+    <div class="hero-stage" data-depth="0.5">
+      <div class="ring-wrap" id="ringWrap" aria-hidden="true">
+        <div class="ring" id="ring"></div>
+      </div>
+      <p class="drag-hint"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2 8h12M5 5L2 8l3 3M11 5l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg> TURN IT BY HAND</p>
+    </div>
+    <img class="hero-mark" data-depth="0.15" src="assets/logo-512.png" width="512" height="512" alt="Land of Memes emblem" fetchpriority="high">
+  </section>
+
+  <div class="rule"></div>
+
+  <section class="wrap steps" id="world">
+    <p class="eyebrow" data-reveal>INSIDE THE LAND</p>
+    <div class="steps-grid">
+      <article class="step" data-reveal data-spot>
+        <span class="step-n">01</span>
+        <h3>Scout the terrain</h3>
+        <p>The board below ranks fresh Solana tokens by what traders are actually moving. Scan it, sort it, get a feel for the ground.</p>
+      </article>
+      <article class="step" data-reveal data-spot>
+        <span class="step-n">02</span>
+        <h3>Check before you step</h3>
+        <p>Every address on this page has a copy button. Paste it somewhere safe and compare it with the source you trust.</p>
+      </article>
+      <article class="step" data-reveal data-spot>
+        <span class="step-n">03</span>
+        <h3>Stake your corner</h3>
+        <p>Our own contract, channels and code are announced here the moment they are confirmed. Until then they stay marked as pending.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap market" id="market">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow" data-reveal>STRAIGHT FROM SOLANA</p>
+        <h2 class="display" data-reveal>Ten tokens<br>moving the most.</h2>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Sort board" data-reveal>
+        <button role="tab" aria-selected="true" data-sort="volume">Volume</button>
+        <button role="tab" aria-selected="false" data-sort="change">Change</button>
+        <button role="tab" aria-selected="false" data-sort="liquidity">Liquidity</button>
+        <i class="tab-ink" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div class="tiles" id="tiles">
+      <div class="tile" data-spot><span class="tile-k">Tokens on the board</span><b class="tile-v" id="tileCount">—</b></div>
+      <div class="tile" data-spot><span class="tile-k">Combined volume, 24h</span><b class="tile-v" id="tileVol">—</b></div>
+      <div class="tile" data-spot><span class="tile-k">Combined liquidity</span><b class="tile-v" id="tileLiq">—</b></div>
+    </div>
+
+    <div class="table" id="table" role="table" aria-label="Top ten Solana tokens by 24 hour volume">
+      <div class="row head" role="row">
+        <span role="columnheader">Asset</span>
+        <span role="columnheader" class="num">Quote</span>
+        <span role="columnheader" class="num">24h</span>
+        <span role="columnheader" class="num hide-s">Volume</span>
+        <span role="columnheader" class="num hide-s">Liquidity</span>
+        <span role="columnheader" class="num">Copy</span>
+      </div>
+      <div id="rows" aria-live="off"></div>
+    </div>
+    <p class="err" id="marketErr" hidden>—  The market source did not answer. Showing the last good numbers; retrying with a longer pause after each miss.</p>
+  </section>
+
+  <section class="wrap board" id="board">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow" data-reveal>THE RECORD BOARD</p>
+        <h2 class="display" data-reveal>What is confirmed,<br>what is not.</h2>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="tile" data-reveal data-spot><span class="tile-k">Owners</span><b class="tile-v pend">pending</b></div>
+      <div class="tile" data-reveal data-spot><span class="tile-k">Supply</span><b class="tile-v pend">pending</b></div>
+      <div class="tile" data-reveal data-spot><span class="tile-k">Liquidity lock</span><b class="tile-v pend">pending</b></div>
+    </div>
+    <ul class="records" id="records">
+{{RECORD_LIST}}
+    </ul>
+  </section>
+
+  <section class="join" id="join">
+    <div class="join-inner">
+      <h2 class="join-title" data-reveal>Your corner<br>is waiting.</h2>
+      <p class="join-copy" data-reveal>Follow the board, watch the record list, and be early when the doors swing wide.</p>
+      <a class="btn btn-ink" href="#market" data-reveal>Back to the board</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <div class="brand-row"><img src="assets/logo-192.png" width="48" height="48" alt=""><b>Land of Memes</b></div>
+      <p class="foot-copy">A Solana meme world with a market board that stays wide awake. Numbers on this page come from public sources; nothing here is financial advice.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Explore</h4>
+      <a href="#world">World</a>
+      <a href="#market">Market</a>
+      <a href="#board">Record board</a>
+      <a href="#join">Join</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contract address</h4>
+{{CA_FOOT}}
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="application/json" id="register">{{REGISTER_PUBLIC}}</script>
+<script src="market.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
